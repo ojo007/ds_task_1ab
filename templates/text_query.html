@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Query Interface</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Text Query Interface</h1>
+        <nav><a href="{{ url_for('home') }}">Home</a></nav>
+        <form id="textQueryForm">
+            <div class="form-group">
+                <label for="query">Enter your product query:</label>
+                <input type="text" id="query" name="query" placeholder="e.g., heart decoration" required>
+            </div>
+            <button type="submit">Search Products</button>
+        </form>
+        <div id="loading" class="loading" style="display: none;">
+            <p>Searching...</p>
+        </div>
+        <div id="results" class="results" style="display: none;">
+            <h2>Search Results</h2>
+            <div id="response"></div>
+            <div id="products"></div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='text_query.js') }}"></script>
+</body>
+</html>

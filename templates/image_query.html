@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Query Interface (OCR)</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Query Interface (OCR)</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">← Back to Home</a>
+        </nav>
+
+        <form id="imageQueryForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="image_data">Upload an image with handwritten text:</label>
+                <input type="file" id="image_data" name="image_data" accept="image/*" required>
+            </div>
+            <button type="submit">Extract Text and Search</button>
+        </form>
+
+        <div id="loading" class="loading" style="display: none;">
+            <p>Extracting text and searching for products...</p>
+        </div>
+
+        <div id="results" class="results" style="display: none;">
+            <h2>OCR Results</h2>
+            <div id="extracted-text" class="extracted-text"></div>
+            <div id="response" class="response"></div>
+            <div id="products" class="products"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='image_query.js') }}"></script>
+</body>
+</html>

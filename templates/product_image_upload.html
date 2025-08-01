@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Image Upload (CNN)</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Product Image Upload (CNN)</h1>
+        <nav><a href="{{ url_for('home') }}">← Back to Home</a></nav>
+        <form id="productImageForm">
+            <div class="form-group">
+                <label for="product_image">Upload a product image:</label>
+                <input type="file" id="product_image" name="product_image" accept="image/*" required>
+            </div>
+            <button type="submit">Identify Product</button>
+        </form>
+        <div id="loading" class="loading" style="display: none;"><p>Identifying product...</p></div>
+        <div id="results" class="results" style="display: none;">
+            <h2>CNN Classification Results</h2>
+            <div id="cnn-class"></div>
+            <div id="response"></div>
+            <div id="products"></div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='product_image_upload.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Product Recommendation System</h1>
+        <p>Choose an option to get started:</p>
+        <nav>
+            <a href="{{ url_for('text_query_page') }}">Text Query</a>
+            <a href="{{ url_for('image_query_page') }}">Image Query (OCR)</a>
+            <a href="{{ url_for('product_image_upload_page') }}">Product Image Upload (CNN)</a>
+        </nav>
+    </div>
+</body>
+</html>
